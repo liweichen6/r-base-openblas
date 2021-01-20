@@ -6,15 +6,17 @@ BINPREF = /mingw32/bin/
 BINPREF64 = /mingw64/bin/
 
 ## Add custom compile flags here
-# EOPTS = -mtune=generic
+# EOPTS = -mtune=generic -pipe
 
 # Enable features
 USE_ICU = YES
 USE_LIBCURL = YES
 BUILD_HTML = YES
-USE_ATLAS = NO
+USE_ATLAS = YES
+ATLAS_PATH="/mingw$(WIN)/lib/"
 MIKTEX = TRUE
 OPENMP = -fopenmp
+
 
 ## Curl / ICU flags
 CURL_LIBS = -lcurl -lssh2 -lz -lssl -lcrypto -lgdi32 -lws2_32 -lcrypt32 -lwldap32
@@ -30,6 +32,7 @@ ISDIR = C:/Program Files (x86)/Inno Setup 6
 MAKEINFO = texi2any
 TEXI2ANY = texi2any
 HOME32 = @home32@
+QPDF = C:/qpdf-10.1.0
 
 ## Fix for MiKTeX removing texi2dvi
 TEXI2DVI = TEXINDEX=@texindex@ texify

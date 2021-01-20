@@ -21,6 +21,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-bzip2"
              "${MINGW_PACKAGE_PREFIX}-tk"
              "${MINGW_PACKAGE_PREFIX}-xz"
              "${MINGW_PACKAGE_PREFIX}-zlib"
+             "${MINGW_PACKAGE_PREFIX}-openblas"
              "texinfo"
              "texinfo-tex"
              "sed")
@@ -29,16 +30,18 @@ license=("GPL")
 url="https://www.r-project.org/"
 
 # Default source is R-devel (override via $rsource_url)
-source=(R-source.tar.gz::"${rsource_url:-https://cran.r-project.org/src/base-prerelease/R-devel.tar.gz}"
+source=(R-source.tar.gz::"${rsource_url:-https://cran.r-project.org/src/base/R-4/R-4.0.3.tar.gz}"
     https://curl.se/ca/cacert.pem
     MkRules.local.in
     shortcut.diff
-    create-tcltk-bundle.sh)
+    create-tcltk-bundle.sh
+    blas.diff)
 
 # Automatic untar fails due to embedded symlinks
 noextract=(R-source.tar.gz)
 
 sha256sums=('SKIP'
+            'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -74,6 +77,7 @@ prepare() {
 
   # Add your patches here
   patch -Np1 -i "${srcdir}/shortcut.diff"
+  patch -Np1 -i "${srcdir}/blas.diff"
 }
 
 build() {

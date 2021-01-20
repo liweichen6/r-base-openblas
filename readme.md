@@ -31,3 +31,8 @@ This is useful if you want to test a patch for base R. Obviously you can adjust 
 ### Option 2: build full installer
 
 Alternatively run [`./full-build.sh`](full-build.sh) to build the complete installer as it appears on CRAN. This can take about 2 hours and requires you have innosetup and latex installed on your machine (in addition to rtools40). The process involves building both 32 and 64 bit R, as well as pdf manuals and finally the installer program. 
+
+
+## OpenBLAS
+
+[Building R 4+ for Windows with OpenBLAS](https://www.avrahamadler.com/2020/05/12/building-r-4-for-windows-with-openblas/)
