@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 
 # Cleanup
-rm -rf src pkg
+rm -rf src pkg cacert.pem *log r-installer* R-source*
 
 # Update system
 pacman -Syyu --noconfirm
