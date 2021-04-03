@@ -30,7 +30,7 @@ license=("GPL")
 url="https://www.r-project.org/"
 
 # Default source is R-devel (override via $rsource_url)
-source=(R-source.tar.gz::"${rsource_url:-https://cran.r-project.org/src/base/R-4/R-4.0.4.tar.gz}"
+source=(R-source.tar.gz::"${rsource_url:-https://cran.r-project.org/src/base/R-4/R-4.0.5.tar.gz}"
     https://curl.se/ca/cacert.pem
     MkRules.local.in
     shortcut.diff
