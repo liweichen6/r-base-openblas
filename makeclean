@@ -1,0 +1,1 @@
+rm -rf src pkg cacert.pem *log r-installer* R-source*
